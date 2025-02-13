@@ -9,7 +9,7 @@ public class ItemDtoWithRequestId extends ItemDto {
     private Integer requestId;
 
     public ItemDtoWithRequestId(ItemDto itemDto, Integer requestId) {
-        super(itemDto.getId(), itemDto.getName(), itemDto.getDescription(), itemDto.getAvailable());
+        super(itemDto.getId(), itemDto.getName(), itemDto.getDescription(), itemDto.getAvailable(), itemDto.getPrice());
         this.requestId = requestId;
     }
 }
