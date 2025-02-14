@@ -6,6 +6,8 @@ import org.springframework.boot.test.autoconfigure.json.JsonTest;
 import org.springframework.boot.test.json.JacksonTester;
 import org.springframework.boot.test.json.JsonContent;
 
+import java.math.BigDecimal;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 @JsonTest
@@ -16,7 +18,7 @@ public class ItemDtoTest {
 
     @Test
     void testSerialize() throws Exception {
-        ItemDto itemDto = new ItemDto(1, "Balalaika", "Brand new balalaika", true);
+        ItemDto itemDto = new ItemDto(1, "Balalaika", "Brand new balalaika", true, new BigDecimal("100.00"));
 
         JsonContent<ItemDto> itemDtoSaved = jacksonTester.write(itemDto);
 

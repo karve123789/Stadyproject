@@ -27,6 +27,7 @@ import ru.practicum.shareit.item.repository.ItemRepository;
 import ru.practicum.shareit.user.model.User;
 import ru.practicum.shareit.user.repository.UserRepository;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -61,7 +62,7 @@ public class BookingServiceTest {
     @BeforeEach
     void setup() {
         user = new User(1, "Jason", "jason@ya.ru");
-        item = new Item(1, "Balalaika", "Brand new balalaika", true, user, null);
+        item = new Item(1, "Balalaika", "Brand new balalaika", true, user, null, new BigDecimal("100.00"));
         userBooker = new User(2, "Shaun", "shaun@ya.ru");
         booking = new Booking(1, LocalDateTime.now().minusDays(2), LocalDateTime.now().plusDays(2), item, userBooker, BookingStatus.CANCELED);
     }
@@ -94,7 +95,7 @@ public class BookingServiceTest {
 
     @Test
     void add_throwsUnavailableItemBookingException() {
-        item = new Item(1, "Balalaika", "Brand new balalaika", false, user, null);
+        item = new Item(1, "Balalaika", "Brand new balalaika", false, user, null, new BigDecimal("100.00"));
 
         Integer bookerId = userBooker.getId();
         BookingDtoInput bookingDtoInput = new BookingDtoInput(userBooker.getId(), item.getId(), LocalDateTime.now().minusDays(2), LocalDateTime.now().plusDays(2));
@@ -113,7 +114,7 @@ public class BookingServiceTest {
 
     @Test
     void add_throwsIllegalItemBookingException() {
-        item = new Item(1, "Balalaika", "Brand new balalaika", true, userBooker, null);
+        item = new Item(1, "Balalaika", "Brand new balalaika", true, userBooker, null, new BigDecimal("100.00"));
 
         Integer bookerId = userBooker.getId();
         BookingDtoInput bookingDtoInput = new BookingDtoInput(userBooker.getId(), item.getId(), LocalDateTime.now().minusDays(2), LocalDateTime.now().plusDays(2));
@@ -174,7 +175,7 @@ public class BookingServiceTest {
 
     @Test
     void setApprove_throwsIllegalItemBookingException() {
-        item = new Item(1, "Balalaika", "Brand new balalaika", true, userBooker, null);
+        item = new Item(1, "Balalaika", "Brand new balalaika", true, userBooker, null, new BigDecimal("100.00"));
         booking = new Booking(1, LocalDateTime.now().minusDays(2), LocalDateTime.now().plusDays(2), item, userBooker, BookingStatus.WAITING);
 
         Integer bookingId = booking.getId();
