@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
@@ -12,4 +14,5 @@ public class ItemDto {
     private String name;
     private String description;
     private Boolean available;
+    private BigDecimal price;
 }
