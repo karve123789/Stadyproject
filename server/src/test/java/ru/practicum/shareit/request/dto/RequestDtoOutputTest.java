@@ -10,6 +10,7 @@ import ru.practicum.shareit.item.dto.ItemDtoWithRequestId;
 import ru.practicum.shareit.request.model.Request;
 import ru.practicum.shareit.user.model.User;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +28,7 @@ public class RequestDtoOutputTest {
         User user = new User(2, "Shaun", "shaun@ya.ru");
         Request request = new Request(1, "Looking for a balalaika", LocalDateTime.now(), user);
 
-        ItemDto itemDto = new ItemDto(1, "Balalaika", "Brand new balalaika", true);
+        ItemDto itemDto = new ItemDto(1, "Balalaika", "Brand new balalaika", true, new BigDecimal("100.00"));
         ItemDtoWithRequestId item = new ItemDtoWithRequestId(itemDto, 1);
         List<ItemDtoWithRequestId> items = new ArrayList<>(List.of(item));
 

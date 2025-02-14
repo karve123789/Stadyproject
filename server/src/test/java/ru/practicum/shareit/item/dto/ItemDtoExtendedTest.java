@@ -7,6 +7,7 @@ import org.springframework.boot.test.json.JacksonTester;
 import org.springframework.boot.test.json.JsonContent;
 import ru.practicum.shareit.booking.dto.BookingDtoShortOutput;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +23,7 @@ public class ItemDtoExtendedTest {
     @Test
     void testSerialize() throws Exception {
 
-        ItemDto itemDto = new ItemDto(1, "Balalaika", "Brand new balalaika", true);
+        ItemDto itemDto = new ItemDto(1, "Balalaika", "Brand new balalaika", true, new BigDecimal("100.00"));
 
         CommentOutputDto comment = new CommentOutputDto(1,"Great balalaika! Thanks!", "Shaun", LocalDateTime.now());
         List<CommentOutputDto> comments = new ArrayList<>(List.of(comment));
