@@ -12,7 +12,7 @@ public class ItemDtoExtended extends ItemDto {
     private BookingDtoShortOutput nextBooking;
 
     public ItemDtoExtended(ItemDto itemDto, List<CommentOutputDto> comments) {
-        super(itemDto.getId(), itemDto.getName(), itemDto.getDescription(), itemDto.getAvailable());
+        super(itemDto.getId(), itemDto.getName(), itemDto.getDescription(), itemDto.getAvailable(),itemDto.getPrice());
         this.comments = comments;
     }
 }

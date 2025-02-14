@@ -9,6 +9,7 @@ import ru.practicum.shareit.booking.model.BookingStatus;
 import ru.practicum.shareit.item.dto.ItemDto;
 import ru.practicum.shareit.user.dto.UserDto;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -22,7 +23,7 @@ public class BookingDtoOutputTest {
 
     @Test
     void testSerialize() throws Exception {
-        ItemDto item = new ItemDto(1, "Balalaika", "Brand new balalaika", true);
+        ItemDto item = new ItemDto(1, "Balalaika", "Brand new balalaika", true, new BigDecimal("100.00"));
         UserDto user = new UserDto(1, "Jason", "jason@ya.ru");
         BookingDtoOutput bookingDtoOutput = new BookingDtoOutput(1, LocalDateTime.now(), LocalDateTime.now(), item, user, BookingStatus.WAITING);
 
