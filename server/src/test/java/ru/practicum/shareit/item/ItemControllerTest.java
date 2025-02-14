@@ -16,6 +16,7 @@ import ru.practicum.shareit.item.dto.ItemDtoExtended;
 import ru.practicum.shareit.item.dto.ItemDtoWithRequestId;
 import ru.practicum.shareit.item.service.ItemService;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -50,7 +51,7 @@ public class ItemControllerTest {
         LocalDateTime start = LocalDateTime.now().plusDays(1);
         LocalDateTime end = LocalDateTime.now().plusDays(2);
 
-        itemDto = new ItemDto(1, "Balalaika", "Brand new balalaika", true);
+        itemDto = new ItemDto(1, "Balalaika", "Brand new balalaika", true, new BigDecimal("100.00"));
 
         itemDtoWithRequestId = new ItemDtoWithRequestId(itemDto, 1);
         itemDtoExtended = new ItemDtoExtended(itemDto, null);
