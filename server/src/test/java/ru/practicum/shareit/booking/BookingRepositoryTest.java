@@ -45,9 +45,12 @@ public class BookingRepositoryTest {
 
     @AfterEach
     void afterEach() {
-        itemRepository.deleteAll();
-        userRepository.deleteAll();
-        bookingRepository.deleteAll();
+        bookingRepository.deleteAll(); // Сначала удаляем бронирования
+        itemRepository.deleteAll(); // Затем удаляем вещи
+        userRepository.deleteAll(); // И в конце - пользователей
+//        itemRepository.deleteAll();
+//        userRepository.deleteAll();
+//        bookingRepository.deleteAll();
     }
 
     @Test
