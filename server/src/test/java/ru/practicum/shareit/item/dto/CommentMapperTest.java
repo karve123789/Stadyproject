@@ -19,7 +19,7 @@ public class CommentMapperTest {
 
     @BeforeAll
     static void setup() {
-        item = new Item(1, "Balalaika", "Brand new balalaika", true);
+        item = new Item(1, "Balalaika", "Brand new balalaika", true, );
         user = new User(2, "Shaun", "shaun@ya.ru");
     }
 

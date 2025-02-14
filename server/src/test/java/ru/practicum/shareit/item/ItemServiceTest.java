@@ -99,7 +99,7 @@ public class ItemServiceTest {
         request = new Request(1, "Looking for a balalaika", LocalDateTime.now(), user2);
         user1 = new User(1, "Jason", "jason@ya.ru");
         item1 = new Item(1, "Balalaika", "Brand new balalaika", true, user1, request);
-        item2 = new Item(2, "Matryoshka", "A set of 5 dolls", true);
+        item2 = new Item(2, "Matryoshka", "A set of 5 dolls", true, );
 
         lastBooking = new Booking(1, LocalDateTime.now().minusDays(2), LocalDateTime.now().minusDays(1), item1, user2, BookingStatus.APPROVED);
         nextBooking = new Booking(2, LocalDateTime.now().plusDays(1), LocalDateTime.now().plusDays(2), item1, user2, BookingStatus.APPROVED);

@@ -31,7 +31,7 @@ public class BookingMapperTest {
 
     @Test
     void toBookingDtoOutput_FromBooking() {
-        Item item = new Item(1, "Balalaika", "Brand new balalaika", true);
+        Item item = new Item(1, "Balalaika", "Brand new balalaika", true, );
         User user = new User(2, "Shaun", "shaun@ya.ru");
         Booking booking = new Booking(1, LocalDateTime.now().minusDays(2), LocalDateTime.now().minusDays(1), item, user, BookingStatus.APPROVED);
 
@@ -57,7 +57,7 @@ public class BookingMapperTest {
 
     @Test
     void toBookingDtoShortOutput_FromBooking() {
-        Item item = new Item(1, "Balalaika", "Brand new balalaika", true);
+        Item item = new Item(1, "Balalaika", "Brand new balalaika", true, );
         User user = new User(2, "Shaun", "shaun@ya.ru");
         Booking booking = new Booking(1, LocalDateTime.now().minusDays(2), LocalDateTime.now().minusDays(1), item, user, BookingStatus.APPROVED);
 

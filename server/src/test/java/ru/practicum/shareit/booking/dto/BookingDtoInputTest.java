@@ -21,7 +21,7 @@ public class BookingDtoInputTest {
 
     @Test
     void testSerialize() throws Exception {
-        Item item = new Item(1, "Balalaika", "Brand new balalaika", true);
+        Item item = new Item(1, "Balalaika", "Brand new balalaika", true, );
         User user = new User(1, "Jason", "jason@ya.ru");
         BookingDtoInput bookingDtoInput = new BookingDtoInput(1, 1, LocalDateTime.now(), LocalDateTime.now());
 
